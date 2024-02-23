@@ -9,7 +9,7 @@ namespace DataStractureAlgorithms
     internal static class Search
     {
         /// <summary>
-        /// Get Search Value Indexnumber from Array By Using Linear Search Algorithms
+        /// Get Search Value Index number from Array By Using Linear Search Algorithms
         /// </summary>
         /// <param name="intArr">input integer array</param>
         /// <param name="searchValue">which value search into array</param>
@@ -35,5 +35,46 @@ namespace DataStractureAlgorithms
 
             return -1;
         }
+
+        /// <summary>
+        /// Get Search Value Index number from SortArray By Using Binary Search Algorithms
+        /// </summary>
+        /// <param name="intSortArr">input integer array</param>
+        /// <param name="searchValue">which value search into array</param>
+        /// <returns>if searchValue is found then return searchValue index number
+        /// or return -1</returns>
+        /// <exception cref="ArgumentNullException">Array is null</exception>
+        public static int BinarySearch(this int[] intSortArr,int searchValue)
+        {
+            int left, right,mid;
+
+            if (intSortArr == null)
+            {
+                throw new ArgumentNullException(nameof (intSortArr));
+            }
+
+            left = 0;
+            right=intSortArr.Length;
+
+            while (left<=right)
+            {
+                mid = (left + right) / 2;
+
+                if (intSortArr[mid]==searchValue)
+                {
+                    return mid;
+                }else if (intSortArr[mid] <= searchValue)
+                {
+                    left= mid + 1;
+                }
+                else
+                {
+                    right= mid - 1;
+                }
+            }
+
+            return -1;
+        }
+
     }
 }
