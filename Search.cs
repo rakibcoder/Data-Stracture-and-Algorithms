@@ -9,7 +9,7 @@ namespace DataStractureAlgorithms
     internal static class Search
     {
         /// <summary>
-        /// Get Search Value Index number from Array By Using Linear Search Algorithms
+        /// Get Search Value Indexnumber from Array By Using Linear Search Algorithms
         /// </summary>
         /// <param name="intArr">input integer array</param>
         /// <param name="searchValue">which value search into array</param>
