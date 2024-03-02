@@ -27,6 +27,7 @@ namespace DataStractureAlgorithms
             
             for (index=0;index<intArr.Length;index++)
             {
+                //if array index value is equal to search value
                 if (intArr[index] == searchValue)
                 {
                     return index;
@@ -58,18 +59,23 @@ namespace DataStractureAlgorithms
 
             while (left<=right)
             {
+                //find middle
                 mid = (left + right) / 2;
 
+                
                 if (intSortArr[mid]==searchValue)
                 {
+                    //if index value is equal to search value
                     return mid;
                 }else if (intSortArr[mid] <= searchValue)
                 {
-                    left= mid + 1;
+                    //if index value is equal or less then search value
+                    left = mid + 1;
                 }
                 else
                 {
-                    right= mid - 1;
+                    //if index value is geater then search value
+                    right = mid - 1;
                 }
             }
 
